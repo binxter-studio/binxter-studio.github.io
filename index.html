@@ -216,6 +216,21 @@
       object-fit: contain; scroll-snap-align: center; }
   }
 
+  /* ── TALKS ── */
+  #talks { padding: 56px 0; }
+  .talk { display: grid; grid-template-columns: auto 1fr; gap: 44px; align-items: center;
+          background: var(--paper); border: 1px solid var(--line); border-radius: 28px; padding: 40px 48px; margin-top: 26px; }
+  .talk-photo img { display: block; width: 300px; height: auto; border-radius: 9px; border: 4px solid #fff;
+                    box-shadow: var(--shadow-lg); transform: rotate(-2.5deg); transition: transform .35s var(--ease); cursor: zoom-in; }
+  .talk-photo:hover img { transform: rotate(0); }
+  .talk-body .cat { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+  .talk-body h3 { font-size: clamp(22px,2.4vw,28px); font-weight: 800; letter-spacing: -.025em; margin: 14px 0 12px; line-height: 1.2; }
+  .talk-body p { color: var(--ink-soft); font-size: 16px; max-width: 48ch; }
+  .talk-body .more { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+                     font-size: 14.5px; font-weight: 800; color: var(--accent); transition: gap .2s var(--ease); }
+  .talk-body .more:hover { gap: 11px; }
+  @media (max-width: 760px) { .talk { grid-template-columns: 1fr; gap: 24px; padding: 32px 26px; } .talk-photo img { width: 100%; transform: none; } }
+
   /* ── APPROACH ── */
   .appr { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 50px; }
   .appr .a { padding: 30px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line);
@@ -394,6 +409,28 @@
   </div>
 </section>
 
+<!-- ══ TALKS ══ -->
+<section id="talks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Talks</span>
+      <h2>발표 · 외부 공유</h2>
+      <p>현장에서 한 일을, 밖에서도 이야기합니다.</p>
+    </div>
+    <div class="talk reveal">
+      <div class="talk-photo">
+        <img src="assets/talk-gpters.jpg" alt="지피터스 OpenClaw 밋업에서 F-lab 사내 AX 에이전트 사례를 발표하는 모습" loading="lazy" />
+      </div>
+      <div class="talk-body">
+        <span class="cat">지피터스 OpenClaw 밋업</span>
+        <h3>'AX, 모두에게 열되 안전하게' 연사</h3>
+        <p>F-lab 사내 AX 에이전트 사례를, AI 커뮤니티 지피터스의<br>OpenClaw 밋업에서 발표했습니다.</p>
+        <a class="more" href="https://www.gpters.org/events/post/openclaw-meetup-0425-super-early-eUIBMc61gtJTxIg" target="_blank" rel="noopener">밋업 안내 보기 <span>↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ 5. APPROACH ══ -->
 <section id="approach">
   <div class="wrap">
@@ -460,7 +497,7 @@
     lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll'); lbImg.src = '';
   };
-  document.querySelectorAll('.montage img').forEach(img =>
+  document.querySelectorAll('.montage img, .talk-photo img').forEach(img =>
     img.addEventListener('click', () => openLb(img.currentSrc || img.src, img.alt)));
   lb.addEventListener('click', (e) => { if (e.target !== lbImg) closeLb(); });
   document.getElementById('lbClose').addEventListener('click', closeLb);
