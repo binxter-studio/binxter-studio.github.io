@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 128" role="img" aria-label="binxter">
+  <title>binxter</title>
+  <text x="12" y="104" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="760" letter-spacing="-2">bin</text>
+  <g transform="translate(119 24)" fill="#ff6a00">
+    <path d="M0 0 H27 L90 96 H63 Z" />
+    <path d="M63 0 H90 L27 96 H0 Z" opacity=".92" />
+  </g>
+  <text x="192" y="104" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="760" letter-spacing="-2">ter</text>
+</svg>
